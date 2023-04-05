@@ -234,3 +234,12 @@ http://ionicframework.com/docs/theming/ */
     --ion-card-background: #1e1e1e;
   }
 }
+
+body {
+  background-color: #fafafa;
+}
+
+.app {
+  max-width: 450px;
+  margin: 0 auto;
+}
