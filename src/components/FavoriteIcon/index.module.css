@@ -1,0 +1,12 @@
+.favoriteIcon {
+   width: 30px;
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   cursor: pointer;
+}
+
+.favoriteIcon_active {
+   fill: rgb(201, 0, 0);
+   stroke: rgb(201, 0, 0);
+}

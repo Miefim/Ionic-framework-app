@@ -12,19 +12,3 @@
    height: 300px;
    width: fit-content;
 }
-
-.favoriteIcon {
-   width: 30px;
-   position: absolute;
-   top: 20px;
-   right: 20px;
-   cursor: pointer;
-}
-
-.favoriteIcon:hover path {
-   fill: rgb(255, 167, 167);
-}
-
-.favoriteIcon_active {
-   fill: rgb(201, 0, 0);
-}
