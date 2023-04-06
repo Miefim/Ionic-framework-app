@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonToolbar, IonBreadcrumbs, IonBreadcrumb } from '@ionic/react';
 
 import List from '../components/List';
 
@@ -7,7 +7,9 @@ const MainPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Каталог</IonTitle>
+          <IonBreadcrumbs>
+            <IonBreadcrumb>Каталог</IonBreadcrumb>
+          </IonBreadcrumbs>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

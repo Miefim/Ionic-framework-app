@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 
 import { useAppDispatch } from '../../../redux/store'
 import { beersSelector } from '../../../redux/slices/BeersSlice';
-import { getBeers, setPage } from '../../../redux/slices/BeersSlice';
+import { getBeers, setPage, Beer, selectBeer} from '../../../redux/slices/BeersSlice';
 import style from './index.module.css'
 
 const List: React.FC = () => {
@@ -14,12 +14,19 @@ const List: React.FC = () => {
    const { beers, page, isLoading, error } = useSelector(beersSelector)
 
    useEffect(() => {
-      dispatch(getBeers(page))
+      if(!beers){
+         dispatch(getBeers(page))
+      }
    },[])
 
    const moreButtonHandler = () => {
       dispatch(setPage(page + 1))
       dispatch(getBeers(page + 1))
+   }
+
+   const cardClickHandler = (beer: Beer) => {
+      history.push(`/Main/${beer.id}`)
+      dispatch(selectBeer(beer))
    }
 
    return(
@@ -36,7 +43,7 @@ const List: React.FC = () => {
                <IonCard 
                   className={style.card} 
                   key={beer.id}
-                  onClick={() => history.push(`/Main/${beer.id}`)}
+                  onClick={() => cardClickHandler(beer)}
                >
                   <img 
                      className={style.card__image} 
