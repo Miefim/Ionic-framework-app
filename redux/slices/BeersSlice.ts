@@ -22,7 +22,7 @@ export const getBeers = createAsyncThunk<Beer[], number, {rejectValue: string}>(
    }
 )
 
-type Beer = {
+export type Beer = {
    id: string
    name: string
    image_url: string

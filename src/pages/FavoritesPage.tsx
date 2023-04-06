@@ -1,6 +1,9 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { useHistory } from 'react-router';
 
 const FavoritesPage: React.FC = () => {
+  const history = useHistory()
+
   return (
     <IonPage>
       <IonHeader>
@@ -9,7 +12,7 @@ const FavoritesPage: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        favoritepage
+        favoritepag
       </IonContent>
     </IonPage>
   );

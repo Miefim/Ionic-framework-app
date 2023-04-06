@@ -1,15 +1,22 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonToolbar, IonBreadcrumbs, IonBreadcrumb } from '@ionic/react';
+
+import BeerDetails from '../components/BeerDetails'
+import { useHistory } from 'react-router-dom'
 
 const SecondPage: React.FC = () => {
+   const histoty = useHistory()
    return(
       <IonPage>
          <IonHeader>
          <IonToolbar>
-            <IonTitle>Каталог</IonTitle>
+            <IonBreadcrumbs>
+               <IonBreadcrumb onClick={() => histoty.push("/Main")}>Каталог</IonBreadcrumb>
+               <IonBreadcrumb>Electronics</IonBreadcrumb>
+            </IonBreadcrumbs>
          </IonToolbar>
          </IonHeader>
          <IonContent fullscreen>
-         secondpage
+            <BeerDetails/>
          </IonContent>
       </IonPage>
    )
