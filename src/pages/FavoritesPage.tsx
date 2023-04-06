@@ -1,18 +1,19 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { useHistory } from 'react-router';
+import { IonContent, IonHeader, IonPage, IonToolbar, IonBreadcrumbs, IonBreadcrumb } from '@ionic/react';
+
+import FavoriteList from '../components/FavoriteList';
 
 const FavoritesPage: React.FC = () => {
-  const history = useHistory()
-
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Избранное</IonTitle>
+          <IonBreadcrumbs>
+            <IonBreadcrumb>Избранное</IonBreadcrumb>
+          </IonBreadcrumbs>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        favoritepag
+        <FavoriteList/>
       </IonContent>
     </IonPage>
   );

@@ -28,6 +28,7 @@ export type Beer = {
    image_url: string
    abv: string
    description: string
+   type?: string
 }
 
 interface initialState {

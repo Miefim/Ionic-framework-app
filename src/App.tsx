@@ -7,13 +7,15 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-  setupIonicReact
+  setupIonicReact,
 } from '@ionic/react';
+
 import { IonReactRouter } from '@ionic/react-router';
 import { beer, bookmark } from 'ionicons/icons';
 import MainPage from './pages/MainPage';
 import SecondPage from './pages/SecondPage';
 import FavoritesPage from './pages/FavoritesPage';
+import FavoriteSecondPage from './pages/FavoriteSecongPage';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,39 +38,44 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp className='app'>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Switch>
-          <Route exact path="/Main">
-            <MainPage/>
-          </Route>
-          <Route exact path="/Main/:id">
-            <SecondPage/>
-          </Route>
-          <Route path="/favorites">
-            <FavoritesPage/>
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/Main" />
-          </Route>
-          </Switch>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href='/Main'>
-            <IonIcon aria-hidden="true" icon={beer} />
-            <IonLabel>Список</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/favorites">
-            <IonIcon aria-hidden="true" icon={bookmark} />
-            <IonLabel>Избранное</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp> 
-);
+const App: React.FC = () => {
+  return(
+    <IonApp className='app'>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Switch>
+              <Route exact path="/Main">
+                <MainPage/>
+              </Route>
+              <Route exact path="/Main/:id">
+                <SecondPage/>
+              </Route>
+              <Route exact path="/Favorites">
+                <FavoritesPage/>
+              </Route>
+              <Route exact path="/Favorites/:id">
+                <FavoriteSecondPage/>
+              </Route>
+              <Route exact path="/">
+                <Redirect to="/Main" />
+              </Route>
+            </Switch>
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="tab1" href='/Main'>
+              <IonIcon aria-hidden="true" icon={beer} />
+              <IonLabel>Список</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="tab2" href='/Favorites'>
+              <IonIcon aria-hidden="true" icon={bookmark}/>
+              <IonLabel>Избранное</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+  )   
+};
 
 export default App;

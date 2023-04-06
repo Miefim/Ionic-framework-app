@@ -5,7 +5,7 @@ import beersSlice from "./slices/BeersSlice";
 
 export const store = configureStore({
    reducer: {
-      beersSlice
+      beersSlice,
    }
 })
 

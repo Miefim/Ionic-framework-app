@@ -1,4 +1,11 @@
-import { IonContent, IonHeader, IonPage, IonToolbar, IonBreadcrumbs, IonBreadcrumb } from '@ionic/react';
+import { 
+  IonContent, 
+  IonHeader, 
+  IonPage, 
+  IonToolbar, 
+  IonBreadcrumbs, 
+  IonBreadcrumb, 
+} from '@ionic/react';
 
 import List from '../components/List';
 
